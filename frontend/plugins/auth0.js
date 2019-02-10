@@ -50,6 +50,9 @@ class Auth0Util {
     localStorage.removeItem('expiresAt')
     localStorage.removeItem('user')
   }
+  getIdToken() {
+    return this.isAuthenticated() ? localStorage.getItem('idToken') : null
+  }
 }
 
 export default (context, inject) => {
